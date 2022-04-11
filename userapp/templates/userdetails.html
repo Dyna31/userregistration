@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            background-color: rgb(194, 191, 224);
+        }
+        h2{
+            text-align: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: xx-large;
+            
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST" action="{% url 'getdata' %}" enctype="multipart/form-data" >
+        {% csrf_token %}
+       <h2>User Details</h2>
+    <table align="center">
+        <tr>
+        <td><b>First Name </b></td>
+        <td><input type="text" name="fname" ></td>
+        </tr>
+        <tr>
+        <td><b>Last Name</b></td>
+        <td><input type="text" name="lname"></td>
+        </tr>
+        <tr>
+            
+         
+        <td><b>Password</b></td>
+        <td><input type="password" name="password"></td>
+        </tr><tr>
+        <tr>
+            
+         
+        <td><b>Number</b></td>
+        <td><input type="text" name="number"></td>
+        </tr>
+        <tr>
+            
+         
+        <td><b>Email</b></td>
+        <td><input type="text" name="email"></td>
+        </tr>
+        <tr>
+            <td><b>Image</b></td>
+            <td><input type="file" name="abc"></td>
+        </tr>
+        <tr>
+        <td>
+        <td><input type="submit" value="SUBMIT"></td>
+        </tr>
+</body>
+</html>

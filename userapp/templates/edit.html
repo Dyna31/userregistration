@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            background-color: rgb(194, 191, 224);
+        }
+        h2{
+            text-align: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: xx-large;
+            
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for a in obj %}
+    <form method="POST" action="{% url 'update' id=a.id %}" enctype="multipart/form-data" >
+        {% csrf_token %}
+       <h2>User Details</h2>
+    <table align="center">
+        <tr>
+        <td><b>First Name </b></td>
+        <td><input type="text" name="fname" value="{{a.fname}}"></td>
+        </tr>
+        <tr>
+        <td><b>Last Name</b></td>
+        <td><input type="text" name="lname" value="{{a.lname}}"></td>
+        </tr>
+        <tr>
+            
+         
+        <td><b>Password</b></td>
+        <td><input type="password" name="password" value="{{a.password}}"></td>
+        </tr><tr>
+        <tr>
+            
+         
+        <td><b>Number</b></td>
+        <td><input type="text" name="number" value="{{a.number}}"></td>
+        </tr>
+        <tr>
+            
+         
+        <td><b>Email</b></td>
+        <td><input type="text" name="email" value="{{a.email}}"></td>
+        </tr>
+        <tr>
+            <td><b>Image</b></td>
+            <td><input type="file" name="abc" value="{{a.abc}}"></td>
+        </tr>
+        <tr>
+        <td>
+        <td><input type="submit" value="SUBMIT"></td>
+        </tr>
+        {% endfor %}
+    </table>
+    </form>
+</body>
+</html>
